@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacker Terminal 3000</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <canvas id="matrix"></canvas> <!-- Matrix effect -->
+  <div id="overlay"></div>
+  <div id="terminal">
+    <div id="login">
+      <label>Enter Username:</label>
+      <input type="text" id="username" placeholder="neo" />
+      <button onclick="startHack()">Login</button>
+    </div>
+    <div id="text" class="hidden"></div>
+    <span class="cursor hidden">█</span>
+  </div>
+
+  <!-- Sound and Music -->
+  <audio id="typeSound" src="https://www.soundjay.com/mechanical/keyboard-1.mp3"></audio>
+  <audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-scifi.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

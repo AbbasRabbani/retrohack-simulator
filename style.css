@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  overflow: hidden;
+}
+
+#terminal {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  white-space: pre-wrap;
+  text-shadow: 0 0 5px #00ff00;
+  animation: flicker 1.5s infinite alternate;
+  backdrop-filter: brightness(0.4);
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.95;
+  }
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(to bottom,
+      rgba(0, 255, 0, 0.03),
+      rgba(0, 255, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#login {
+  font-size: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00ff00;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#login input,
+#login button {
+  background: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+/* Matrix Canvas Background */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: black;
+}
